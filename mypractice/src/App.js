@@ -26,6 +26,9 @@ class HelloW extends React.Component
   state = {
     show : true
   }
+  toggleShow = () => {
+    this.setState({show : !this.state.show})
+  }
   render(){
     if(this.state.show){
       return (
@@ -33,13 +36,13 @@ class HelloW extends React.Component
         <h5>{this.props.subtitle}</h5>
         Hello {this.props.mytest} 💀
        <br/><br/>
-        <button onClick={()=> this.setState({show : false})}>toogle button</button>
+        <button onClick={this.toggleShow}>toogle button</button>
         </div>
       )  
     }else {
       return <div id="helloW" >no hay elemento
         <br/><br/>
-        <button onClick={()=> this.setState({show : true})}>toogle button</button>
+        <button onClick={this.toggleShow}>toogle button</button>
       </div> 
     }
       
